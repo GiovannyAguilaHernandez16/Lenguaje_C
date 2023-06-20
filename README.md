@@ -16,7 +16,13 @@ En resumen, la programación es una actividad emocionante y gratificante que me 
 No Olvides Pasar por mi Canal de Youtube para Descubrir, mas Proyectos como este:
 - https://www.youtube.com/watch?v=dQw4w9WgXcQ
 
-- Para Ejecutar el Programa Ingresa en el siguiente Link: https://sourceforge.net/projects/orwelldevcpp/
+En caso de Que la Aplicacion Adjunta Dev C++, No inicie
+Siga las siguientes Intrucciones:
+
+
+- Para Ejecutar el Programa,
+ Ingresa en el siguiente Link: https://sourceforge.net/projects/orwelldevcpp/
+
 - Descarga el Pograma Dev-C++
 - Sigue las Instrucciones de Instalacion.
 - Abre el Archivo .c de este Repositorio
