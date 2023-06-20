@@ -6,6 +6,7 @@
 #include <string.h>
 #include <stdlib.h>
 
+// Giovanny Aguila Hernandez 
 char cadena[50];
 //MATRICES
 char registro[50][70][50];
@@ -54,7 +55,7 @@ int ventas_totales;
 int cantidadoriginal;
 int opcion;
 int productos;
-int ventas_realizadas; //asigna el ID en las ventas, asegurando que se incremente adecuadamente en cada ejecución.
+int ventas_realizadas; //asigna el ID en las ventas, asegurando que se incremente adecuadamente en cada ejecuciÃ³n.
 // Fin del Apartado de Variables Globales
 
 
@@ -145,13 +146,13 @@ int main (){
         printf("\t [5] Modificar Venta        \n");
         printf("\t [6] Cancelar (Eliminar) Venta  \n");
         printf("\n\t FILTRAR VENTAS: \n");
-        printf("\t [7] Mostrar Ventas de Refacciones Eléctricas por Fecha y su Total\n");
-        printf("\t [8] Mostrar Ventas de Refacciones Mecánicas por Fecha y su Total \n");
+        printf("\t [7] Mostrar Ventas de Refacciones ElÃ©ctricas por Fecha y su Total\n");
+        printf("\t [8] Mostrar Ventas de Refacciones MecÃ¡nicas por Fecha y su Total \n");
         printf("\t [9] Mostrar Total de Ventas de Refacciones por Fecha y su Total  \n");
         printf("\n\t SALIDA: \n");
         printf("\t [10] Salir\n\n");
 
-        printf("\t Opción:  > ");
+        printf("\t OpciÃ³n:  > ");
         scanf("%d", &opcion); // lectura de la opcion a realizar
         
         
@@ -228,7 +229,7 @@ int main (){
                 salir();
                 break;
             default:
-                printf("\t Opción no válida, pesione [ENTER/INTRO] ");
+                printf("\t OpciÃ³n no vÃ¡lida, pesione [ENTER/INTRO] ");
                 getch();
                 system("cls"); // Limpiar la pantalla
                 imprimir();
@@ -247,11 +248,11 @@ int main (){
 void imprimir() {
     printf("\n\t\t  REFACCIONARIA AUTOMOTRIZ GENERAL ELECTRIC \t\n");
     printf(" ------------------------------------------------------------------------------------------------------------------------------------------------\n");
-    printf(" ¦   No. del Producto    ¦   Producto                     ¦   Tipo (Electrica ó Mecanica)    ¦   Existencia             ¦   Precio              ¦\n");
+    printf(" Â¦   No. del Producto    Â¦   Producto                     Â¦   Tipo (Electrica Ã³ Mecanica)    Â¦   Existencia             Â¦   Precio              Â¦\n");
     printf(" ------------------------------------------------------------------------------------------------------------------------------------------------\n");
 
     for (i = 0; i < productos; i++) {
-        printf(" ¦   No: %-15s ¦   %-25s    ¦   Tipo: %-24s ¦   Existencia: %-10s ¦   Precio: $%-10s ¦\n",
+        printf(" Â¦   No: %-15s Â¦   %-25s    Â¦   Tipo: %-24s Â¦   Existencia: %-10s Â¦   Precio: $%-10s Â¦\n",
                registro[i][0], registro[i][1], registro[i][2], registro[i][3], registro[i][4]);
         printf(" ------------------------------------------------------------------------------------------------------------------------------------------------\n");
     }
@@ -261,13 +262,13 @@ void imprimir() {
 void imprimirventas() {
     int id;
     int total = 0;
-    printf("\n\t\t\t\t\t\t    REGISTRO DE VENTAS ´GENERAL ELECTRIC´ \n");
+    printf("\n\t\t\t\t\t\t    REGISTRO DE VENTAS Â´GENERAL ELECTRICÂ´ \n");
     printf("\t\t\t   --------------------------------------------------------------------------------------------\n");
-    printf("\t\t\t   ¦  ID   ¦  Fecha           ¦   No. de Producto   ¦   Cantidad Comprada   ¦    Importe      ¦ \n");
+    printf("\t\t\t   Â¦  ID   Â¦  Fecha           Â¦   No. de Producto   Â¦   Cantidad Comprada   Â¦    Importe      Â¦ \n");
     printf("\t\t\t   --------------------------------------------------------------------------------------------\n");
 
     for (i = 0; i < ventas_totales; i++) {
-        printf("\t\t\t   ¦  %-3s  ¦  %-15s ¦   No: %-13s ¦   Cant: %-12s  ¦    $%-10s  ¦\n",
+        printf("\t\t\t   Â¦  %-3s  Â¦  %-15s Â¦   No: %-13s Â¦   Cant: %-12s  Â¦    $%-10s  Â¦\n",
 		       ventas[i][0], ventas[i][1], ventas[i][2], ventas[i][3],  ventas[i][4]);
     printf("\t\t\t   --------------------------------------------------------------------------------------------\n");
 	}
@@ -313,7 +314,7 @@ void agregar() {
         getchar(); // Esperar a que se presione una tecla
 		system("cls"); // Limpiar la pantalla
     } else {
-        printf("\nNo se pueden agregar más productos. El almacén está lleno.\n");
+        printf("\nNo se pueden agregar mÃ¡s productos. El almacÃ©n estÃ¡ lleno.\n");
     }
     
 } // Fin de Funcion de Agregar Productos [1] OPCION 1
@@ -330,7 +331,7 @@ printf ("    - [1] Nombre\n");
 printf ("    - [2] Tipo\n");
 printf ("    - [3] Existencia\n");
 printf ("    - [4] Precio\n");
-printf ("\n    - Opción:  > ");
+printf ("\n    - OpciÃ³n:  > ");
 scanf ("%i",&registromodificar);
         
 for (i=0;i<=1;i++){
@@ -349,7 +350,7 @@ void EliminarProductos() {
     scanf("%d", &eliminar);
 
     if (eliminar > 0 && eliminar <= productos) {
-        // Desplazar los productos posteriores una posición hacia atrás
+        // Desplazar los productos posteriores una posiciÃ³n hacia atrÃ¡s
         for (i = eliminar - 1; i < productos - 1; i++) {
             for (j = 0; j < 11; j++) {
                 strcpy(registro[i][j], registro[i + 1][j]); //copiar los valores del producto que sigue en la lista al producto actual
@@ -362,7 +363,7 @@ void EliminarProductos() {
         //imprimir();
     }
 	else{
-        printf("Numero de producto inválido. Intente nuevamente\n");
+        printf("Numero de producto invÃ¡lido. Intente nuevamente\n");
     }
 } // Fin de Funcion Eliminar Productos [3] OPCION 3
 
@@ -380,7 +381,7 @@ void realizarventas() {
         for (i = 0; i < numVentas; i++) {
             getchar();
             sprintf(ventas[ventas_totales][0], "%d", ventas_realizadas + 1);  // Asignar ID en la columna 5
-            printf("\n   El [ID] de esta Venta sera: %s", ventas[ventas_totales][0]);  // Impresión del ID asignado
+            printf("\n   El [ID] de esta Venta sera: %s", ventas[ventas_totales][0]);  // ImpresiÃ³n del ID asignado
             printf("\n\n   - Ingrese la Fecha del Dia de Hoy Bajo el Siguiente Formato [DDMMAAAA]: ");
             gets(ventas[ventas_totales][1]);
             printf("\n   -Numero de producto vendido (No.): ");
@@ -389,7 +390,7 @@ void realizarventas() {
             gets(ventas[ventas_totales][3]);
             ventas_realizadas++;  //aumenta el id
 
-            // Obtener el número de producto y la cantidad vendida
+            // Obtener el nÃºmero de producto y la cantidad vendida
             int num = atoi(ventas[ventas_totales][2]);
             int cantidad = atoi(ventas[ventas_totales][3]);
 
@@ -431,17 +432,17 @@ void modificar_venta() {
             printf("\n\t\t\t   Venta encontrada:\n");
             
             printf("\t\t\t   --------------------------------------------------------------------------------------------\n");
-            printf("\t\t\t   ¦  ID   ¦  Fecha           ¦   No. de Producto   ¦   Cantidad Comprada   ¦    Importe      ¦ \n");
+            printf("\t\t\t   Â¦  ID   Â¦  Fecha           Â¦   No. de Producto   Â¦   Cantidad Comprada   Â¦    Importe      Â¦ \n");
             printf("\t\t\t   --------------------------------------------------------------------------------------------\n");
-            printf("\t\t\t   ¦  %-3s  ¦  %-15s ¦   No: %-13s ¦   Cant: %-12s  ¦    $%-10s  ¦\n",
+            printf("\t\t\t   Â¦  %-3s  Â¦  %-15s Â¦   No: %-13s Â¦   Cant: %-12s  Â¦    $%-10s  Â¦\n",
 		                       ventas[i][0], ventas[i][1], ventas[i][2], ventas[i][3],  ventas[i][4]);
 			printf("\t\t\t   --------------------------------------------------------------------------------------------\n");
 
 
-            printf("\n\t\t\t   ¿Qué campo desea modificar?\n");
+            printf("\n\t\t\t   Â¿QuÃ© campo desea modificar?\n");
             printf("\t\t\t   1. Fecha\n");
             printf("\t\t\t   2. Cantidad\n");
-            printf("\t\t\t   Opción: ");
+            printf("\t\t\t   OpciÃ³n: ");
             scanf("%d", &opcion);
 
             switch (opcion) {
@@ -455,11 +456,11 @@ void modificar_venta() {
                     getchar();
                     gets(ventas[i][3]);
 
-                    // Obtener el número de producto y la cantidad vendida
+                    // Obtener el nÃºmero de producto y la cantidad vendida
                     int num = atoi(ventas[i][2]);
                     int nuevaCantidad = atoi(ventas[i][3]);
 
-                    // Obtener la cantidad original del producto en el almacén
+                    // Obtener la cantidad original del producto en el almacÃ©n
                     int cantidadOriginal = atoi(registro[num - 1][3]);
 
                     // Calcular el importe
@@ -469,7 +470,7 @@ void modificar_venta() {
                     // Actualizar el importe en ventas
                     sprintf(ventas[i][4], "%d", importe);
 
-                    // Actualizar la cantidad en existencia del producto en el almacén
+                    // Actualizar la cantidad en existencia del producto en el almacÃ©n
 
                     int cantidadRestante = cantidadoriginal - nuevaCantidad;
                     sprintf(registro[num - 1][3], "%d", cantidadRestante);
@@ -480,23 +481,23 @@ void modificar_venta() {
 void eliminarventa() {
     int elimventa;
     int i, j, num, cantidad;
-    printf("\n\t - Escribe el número de venta que deseas eliminar: ");
+    printf("\n\t - Escribe el nÃºmero de venta que deseas eliminar: ");
     scanf("%i", &elimventa);
     int total = 0;
 
     printf("\n\t\tREGISTRO DE VENTAS\n");
 
     if (elimventa > 0 && elimventa <= ventas_totales) {
-        // Obtener el número de producto y la cantidad vendida de la venta a eliminar
+        // Obtener el nÃºmero de producto y la cantidad vendida de la venta a eliminar
         num = atoi(ventas[elimventa - 1][2]);
         cantidad = atoi(ventas[elimventa - 1][3]);
 
-        // Regresar la cantidad de existencias en el almacén
+        // Regresar la cantidad de existencias en el almacÃ©n
         int cantidadRestante = atoi(registro[num - 1][3]);
         cantidadRestante += cantidad;
         sprintf(registro[num - 1][3], "%d", cantidadRestante);
 
-        // Desplazar las ventas  una posición hacia atrás
+        // Desplazar las ventas  una posiciÃ³n hacia atrÃ¡s
         for (i = elimventa - 1; i < ventas_totales - 1; i++) {
             for (j = 0; j < 5; j++) {
                 strcpy(ventas[i][j], ventas[i + 1][j]);
@@ -505,7 +506,7 @@ void eliminarventa() {
             // Actualizar el ID del producto eliminado
             sprintf(ventas[i][0], " %d", i + 1);
 
-            // Obtener el número de producto y la cantidad vendida
+            // Obtener el nÃºmero de producto y la cantidad vendida
             num = atoi(ventas[i][2]);
             cantidad = atoi(ventas[i][3]);
 
@@ -543,10 +544,10 @@ float sumar_ventas_pcc(int tipo_producto) {
         int x = atoi(ventas[i][2]);
         int y = strlen(registro[x - 1][2]);
         
-        if (tipo_producto == 1 && y == 9) { // Producto eléctrico
+        if (tipo_producto == 1 && y == 9) { // Producto elÃ©ctrico
             float importe = atof(ventas[i][4]);
             total_ventas += importe;
-        } else if (tipo_producto == 2 && y == 8) { // Producto mecánico
+        } else if (tipo_producto == 2 && y == 8) { // Producto mecÃ¡nico
             float importe = atof(ventas[i][4]);
             total_ventas += importe;
         }
@@ -555,9 +556,9 @@ float sumar_ventas_pcc(int tipo_producto) {
     return total_ventas;
 }
 void refacciones_electricas() {
-    printf("\n\t\t    REGISTRO DE VENTAS ´GENERAL ELECTRIC´ Refacciones ELECTRICAS   \n");
+    printf("\n\t\t    REGISTRO DE VENTAS Â´GENERAL ELECTRICÂ´ Refacciones ELECTRICAS   \n");
     printf("\t\t   --------------------------------------------------------------------------------------------\n");
-    printf("\t\t   ¦  ID   ¦  Fecha           ¦   No. de Producto   ¦   Cantidad Comprada   ¦    Importe      ¦ \n");
+    printf("\t\t   Â¦  ID   Â¦  Fecha           Â¦   No. de Producto   Â¦   Cantidad Comprada   Â¦    Importe      Â¦ \n");
     printf("\t\t   --------------------------------------------------------------------------------------------\n");
     
     for ( i = 0; i < ventas_totales; i++) {
@@ -565,19 +566,19 @@ void refacciones_electricas() {
         int y = strlen(registro[x - 1][2]);
         
         if (y == 9) {
-            printf("\t\t   ¦  %-3s  ¦  %-15s ¦   No: %-13s ¦   Cant: %-12s  ¦    $%-10s  ¦\n",
+            printf("\t\t   Â¦  %-3s  Â¦  %-15s Â¦   No: %-13s Â¦   Cant: %-12s  Â¦    $%-10s  Â¦\n",
                    ventas[i][0], ventas[i][1], ventas[i][2], ventas[i][3], ventas[i][4]);
             printf("\t\t   --------------------------------------------------------------------------------------------\n");
         }
     }
     
-    float total_ventas = sumar_ventas_pcc(1); // Suma de ventas de productos eléctricos
-    printf("\n\t\t   Total de ventas de productos eléctricos: $%.2f\n", total_ventas);
+    float total_ventas = sumar_ventas_pcc(1); // Suma de ventas de productos elÃ©ctricos
+    printf("\n\t\t   Total de ventas de productos elÃ©ctricos: $%.2f\n", total_ventas);
 }
 void refacciones_mecanicas() {
-    printf("\n\t\t    REGISTRO DE VENTAS ´GENERAL ELECTRIC´ Refacciones MECANICAS   \n");
+    printf("\n\t\t    REGISTRO DE VENTAS Â´GENERAL ELECTRICÂ´ Refacciones MECANICAS   \n");
     printf("\t\t   --------------------------------------------------------------------------------------------\n");
-    printf("\t\t   ¦  ID   ¦  Fecha           ¦   No. de Producto   ¦   Cantidad Comprada   ¦    Importe      ¦ \n");
+    printf("\t\t   Â¦  ID   Â¦  Fecha           Â¦   No. de Producto   Â¦   Cantidad Comprada   Â¦    Importe      Â¦ \n");
     printf("\t\t   --------------------------------------------------------------------------------------------\n");
     
     for ( i = 0; i < ventas_totales; i++) {
@@ -585,14 +586,14 @@ void refacciones_mecanicas() {
         int y = strlen(registro[x - 1][2]);
         
         if (y == 8) {
-            printf("\t\t   ¦  %-3s  ¦  %-15s ¦   No: %-13s ¦   Cant: %-12s  ¦    $%-10s  ¦\n",
+            printf("\t\t   Â¦  %-3s  Â¦  %-15s Â¦   No: %-13s Â¦   Cant: %-12s  Â¦    $%-10s  Â¦\n",
                    ventas[i][0], ventas[i][1], ventas[i][2], ventas[i][3], ventas[i][4]);
             printf("\t\t   --------------------------------------------------------------------------------------------\n");
         }
     }
     
-    float total_ventas = sumar_ventas_pcc(2); // Suma de ventas de productos mecánicos
-    printf("\n\t\t   Total de ventas de productos mecánicos: $%.2f\n", total_ventas);
+    float total_ventas = sumar_ventas_pcc(2); // Suma de ventas de productos mecÃ¡nicos
+    printf("\n\t\t   Total de ventas de productos mecÃ¡nicos: $%.2f\n", total_ventas);
 }
 
 
@@ -632,13 +633,13 @@ int i;
   printf("\n  *                                                                                                                                                                                                        *\n");
   printf("  *               Su programa Presento:                                                                                                                                                                    *\n");
   printf("  *                                                                                                                                                                                                        *\n");                                                                                                                                                          
-  printf("  *              -¿Algun Problema? o ¿Nescecita ayuda para su Uso?,                                                                                                                                        *    \n");
+  printf("  *              -Â¿Algun Problema? o Â¿Nescecita ayuda para su Uso?,                                                                                                                                        *    \n");
   printf("  *              -Llame a Servicio al Cliente ( 246-217-8555 ) ellos lo Atenderan.                                                                                                                         *\n");
   printf("  *                                                                                                                                                                                                        *\n");
   printf("  *                               En dado Caso de Solicitar un Rembolso:                                                                                                                                   *     \n");
   printf("  *                                                                                                                                                                                                        *\n");
   printf("  *                               -Presente su Factura de Compra del Programa en Cuestion + Su RFC, al ( 246-217-8555 ).                                                                                   *   \n");
-  printf("  *                                                                                                                                     -Gracias por usar nuestros Servicios MICROSOFT´2023-2025´(R)       *   \n");
+  printf("  *                                                                                                                                     -Gracias por usar nuestros Servicios MICROSOFTÂ´2023-2025Â´(R)       *   \n");
   printf("  *                                                                                                                                                                                                        *\n ");                                                                                                                                                          
   
 
@@ -654,7 +655,7 @@ int i;
     printf("\t\t - GIOVANNY AGUILA HERNANDEZ.\n\n");
     printf("\t\t - ISABELA RAMIREZ CRUZ.\n\n");
     printf("\t\t - VALERIA ARIADNA SASTRE HERNANDEZ.\n\n");
-    printf("\t\t - DENIS RUBI MUÑOZ RODRIGUEZ. \n\n");
+    printf("\t\t - DENIS RUBI MUÃ‘OZ RODRIGUEZ. \n\n");
     printf("\t\t - YEZMIN ZAMORA CERVANTES .\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n");
 
 }   
@@ -665,74 +666,74 @@ int i;
 void Pantalla_De_Inicio() {
 	
         Auto_uno();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
 
         Auto_dos();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
         
         Auto_tres();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
             
         Auto_cuatro();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
         
         Auto_cinco();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
 
         Auto_seis();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
         
         Auto_siete();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
             
         Auto_ocho();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
         
         Auto_nueve();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
 
         Auto_diez();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
         
         Auto_once();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
             
         Auto_doce();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
         
         Auto_trece();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
 
         Auto_catorce();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
         
         Auto_quince();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         system("cls");
             
         Auto_diesciseis();
-        Sleep(100); // Pausa de 1 segundo entre cada iteración (1000 ms)
+        Sleep(100); // Pausa de 1 segundo entre cada iteraciÃ³n (1000 ms)
         
     printf("                                                                                                                \\___________________________________________________________\n\n\n");    
     printf("            _______________________________________       _____________________________________________________________________________________________________               \n");
     printf("           /                                       \\     /                                                                                                     \\                  \n");
     printf("           |        !!!!! Bienvenidos !!!!!!        |    |                                                                                                     |                    \n");
     printf("           |                                        |    |   ____  _____ _____ _    ____ ____ ___ ___  _   _    _    ____  ___    _                            |                    \n");
-    printf("           |            ¡Tenemos lo que             |    |  |  _ \\| ____|  ___/ \\  / ___/ ___|_ _/ _ \\| \\ | |  / \\  |  _ \\|_ _|  / \\                           |             \n");
+    printf("           |            Â¡Tenemos lo que             |    |  |  _ \\| ____|  ___/ \\  / ___/ ___|_ _/ _ \\| \\ | |  / \\  |  _ \\|_ _|  / \\                           |             \n");
     printf("           |              necesitas!                |    |  | |_) |  _| | |_ / _ \\| |  | |    | | | | |  \\| | / _ \\ | |_) || |  / _ \\                          |                \n");
     printf("           |                                        |    |  |  _ <| |___|  _/ ___ | |__| |___ | | |_| | |\\  |/ ___ \\|  _ < | | / ___ \\                         |                 \n");
     printf("           |     -> Amplia variedad de piezas       |    |  |_| \\_|_____|_|/_/   \\_\\____\\____|___\\___/|_| \\_/_/   \\_|_| \\_|___/_/   \\_\\                        |          \n");
@@ -740,12 +741,12 @@ void Pantalla_De_Inicio() {
     printf("           |     -> Excelente servicio al cliente   |    |     --- ELECTRICA AUTOMOTRIZ GENERAL ELECTRIC ----------                                            |                    \n");
     printf("           |     -> Precios competitivos            |    |                                                                                                     |                    \n");
     printf("           |                                        |    |     - Accesorios Para tu Auto / Moto / Tractor / Trailer / Podadora / Bicicleta                     |                    \n");
-    printf("           |     Ven y descubre nuestro catálogo    |    |                                                                                                     |                    \n");
+    printf("           |     Ven y descubre nuestro catÃ¡logo    |    |                                                                                                     |                    \n");
     printf("           |     completo de repuestos y accesorios |    |     - Variedad en Piezas:                                                                           |                    \n");
-    printf("           |     para tu automóvil.                 |    |        -> Mecanicas y                                                                               |                    \n");
+    printf("           |     para tu automÃ³vil.                 |    |        -> Mecanicas y                                                                               |                    \n");
     printf("           |                                        |    |         -> Electricas                                                                               |                    \n");
     printf("           |     Te esperamos en nuestra tienda:    |    |                                                                                                     |                    \n");
-    printf("           |     Dirección: Calle Principal, No. 1  |    |      Contamos con Garantia de 8 meses Aviles despues de realizada tu Compra.                        |                    \n");
+    printf("           |     DirecciÃ³n: Calle Principal, No. 1  |    |      Contamos con Garantia de 8 meses Aviles despues de realizada tu Compra.                        |                    \n");
     printf("           |     Horario: Lunes a Viernes, 8am-6pm  |    |        - Solo Presenta tu Ticket de Compra,                                                         |                    \n");
     printf("           |                                        |    |        - + RFC y Tu INE.                                                                            |                    \n");
     printf("           |        ___                 ___         |    |                                                                                                     |                    \n");
